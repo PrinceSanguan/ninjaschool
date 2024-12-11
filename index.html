@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Ninja School - Martial Arts for Children</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .hero_area {
+            position: relative;
+            height: 80vh;
+            color: #ffffff00;
+            overflow: hidden;
+        }
+
+        .text {
+            color: #f8f9fa;
+            font-size: 3.5rem;
+            font-weight: bolder;
+        }
+        .text1 {
+            color: #f8f9fa;
+            font-size: 1.5rem;
+        }
+        .hero-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        }
+        .hero-carousel .carousel-item {
+            height: 100vh;
+            transition: transform 5s ease-in-out;
+                
+        }
+        
+        .carousel-inner {
+            display: flex;
+            width: 100%;
+            transition: transform 5s ease-in-out; 
+        }
+
+        .carousel-item {
+            flex: 0 0 100%; 
+            
+        }
+
+        .card {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            width: 350px;
+            padding: 10px;
+            word-wrap: break-word;
+            background-color: #ffffffa8;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: .25rem;
+        }
+
+        .card-body1 {
+            color: #000;
+            background-color: rgba(255, 255, 255, 0.055);
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;    
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding-top: 100px;
+        }
+        .section-title {
+            margin-bottom: 30px;
+        }
+        .about-section, .program-section, .schedule-section, .coach-section, .testimonial-section {
+            padding: 60px 0;
+        }
+
+        .testimonial-section{
+            color: #000;
+            background-color: #e3e2e4;
+        }
+
+        .testimonial-item {
+            display: none;
+        }
+        .testimonial-item.active {
+            display: block;
+        }
+
+        .program-section {
+            position: relative;
+            background-color: #b8b9b9;
+            color: #fff; /* Adjust text color for visibility */
+            padding: 50px 0; /* Adjust as needed */
+        }
+        
+        
+        .program-section .container {
+            position: relative;
+            z-index: 2; /* Ensures the content is above the background image */
+        }
+        
+
+        .section-title1{
+            color: #0b4b8b;
+            font-weight: bolder;
+        }
+
+        .row {
+            font-weight: bolder;
+            color: #f8f9fa;
+
+        }
+
+        .about-section, .schedule-section {
+            background-color: #f8f9fa;
+        }
+        #coaches {
+            background-color: #8eb9e4af;
+            padding: 50px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #333333;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .coach-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            min-height: 220px; /* Ensures all cards are the same height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .coach-card h3 {
+            font-size: 1.5em;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        
+        .coach-card p {
+            font-size: 1em;
+            color: #555;
+        }
+        
+        .coach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .footer_section {
+            background-color: #000;
+            color: #fff;
+            padding: 40px 0;
+        }
+        .btn-primary {
+            color: #fff;
+            background-color:#343a40;
+            border-color:aliceblue;
+        }
+
+        .btn-custom {
+            background-color: #8ad4ff;
+            color: #000;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #92caf0;
+            color: #000;
+        }
+        .table {
+            background-color: #fff;
+        }
+
+        .container h1 {
+            padding-top: 10%;
+        }
+
+        .next, .prev {
+            color: #343a40;
+        }
+        @media (max-width: 768px) {
+            .hero_area {
+                height: 70vh;
+            }
+            .hero-carousel .carousel-item {
+                height: 70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">Ninja School</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#program">Program</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#coaches">Coaches</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero_area">
+        <div id="heroCarousel" class="carousel slide hero-carousel" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="hero-image" style="background-image: url('/assets/bg-img/bg1.jpg');"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="hero-image" style="background-image: url('/assets/bg-img/bg2.jpg');"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="hero-image" style="background-image: url('/assets/bg-img/bg3.jpg');"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="hero-image" style="background-image: url('/assets/bg-img/bg4.jpg');"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="hero-image" style="background-image: url('/assets/bg-img/bg5.jpg');"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container hero-content">
+            <h1 class="text display-4">Welcome to Ninja School</h1>
+            <p class="text1 lead">Developmental Mixed Martial Arts & Coordination School for young children</p>
+            <a href="#contact" class="btn btn-custom btn-lg mt-3">Contact Us</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <p>Ninja School is a developmental Mixed Martial Arts & Coordination School for young children, co-created by the founding members and nurtured by the Students and Parents involved. Our aim is to create a unique environment where kids not only strive to improve themselves, but also to help those around them improve.</p>
+            <p>We are located in an Olympic Legacy Dojo, 380sqm at Thomas Tallis Secondary School. It's the largest open dojo in Europe, first designed for the Japanese olympic judo team in 2012. Ninja School proudly runs 14 classes a week here.</p>
+        </div>
+    </section>
+
+    <section id="video-section" style="
+        background: url('/assets/bg-img/bg-p.jpg') no-repeat center center; 
+        background-size: cover; 
+        padding: 60px 0;
+        position: relative;">
+    <div class="container text-center">
+        <h2 class="section-title" style="color: rgb(46, 45, 45); background-color: rgb(187, 187, 187); margin: 0;">Watch Our Ninja Training in Action</h2>
+
+        <div class="embed-responsive embed-responsive-16by9 mt-4">
+            <iframe class="embed-responsive-item" src="/assets/video/1.mp4"></iframe>
+        </div>
+    </div>
+</section>
+
+    
+    
+    <section id="program" class="program-section">
+        <div class="container">
+            <h2 class="section-title1 text-center mb-4">Our Programs</h2>
+            <div class="row">
+                <!-- Ninja School Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body1">
+                            <h3 class="card-title">Ninja School</h3>
+                            <p class="card-text">&pound;160 per term, one class per week. 10% sibling discount.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Ninja Cubs Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body1">
+                            <h3 class="card-title">Ninja Cubs</h3>
+                            <p class="card-text">&pound;145 per term, one class per week. 10% sibling discount.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Kaizen Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body1">
+                            <h3 class="card-title">Kaizen</h3>
+                            <p class="card-text">&pound;220 per term, unlimited classes per week. 10% sibling discount.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="schedule" class="schedule-section">
+        <div class="container">
+            <h2 class="section-title">Time Table:</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Time</th>
+                            <th>Class</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>16:15 - 17:30</td>
+                            <td>Ninja School S.Yrs 1&2, 3&4</td>
+                        </tr>
+                        <tr>
+                            <td>Monday</td>
+                            <td>17:45 - 19:00</td>
+                            <td>Ninja School S.Yrs 5&6, Kaizen Martial Arts BJJ</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>16:15 - 17:30</td>
+                            <td>Ninja School S.Yrs 1&2, 3&4</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>16:15 - 17:30</td>
+                            <td>Ninja School S.Yrs 5&6, Ninja School Plus</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>16:15 - 17:30</td>
+                            <td>Ninja School S.Yrs 3&4, Kaizen Martial Arts Thaijutsu</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="coaches" class="coach-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Coaches</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="coach-card">
+                        <h3>Harry Bovill</h3>
+                        <p>Founder of Ninja School and a Social Entrepreneur</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="coach-card">
+                        <h3>Jonathan Hatzimasouras</h3>
+                        <p>Experienced martial arts instructor</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="coach-card">
+                        <h3>Reece Fletcher</h3>
+                        <p>Skilled martial arts coach</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="coach-card">
+                        <h3>Mouncif Alif</h3>
+                        <p>Dedicated martial arts trainer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="testimonials" class="testimonial-section">
+        <div class="container">
+            <h2 class="section-title">Testimonials</h2>
+            <div id="testimonialContainer">
+                <div class="testimonial-item active">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"Ninja school has been a great experience for our 6 year old. We've found all the Ninja teachers compassionate and caring and really focused on helping give a well rounded experience for body, mind and spirit for the kids in helping them develop in themselves and their confidence."</p>
+                    </blockquote>
+                </div>
+                <div class="testimonial-item">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"Ninja school is a family you become a part of. My children have been attending since the age of 3 and they are now 6 and 8! They have progressed physically and mentally and they love it!"</p>
+                    </blockquote>
+                </div>
+                <div class="testimonial-item">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"The team at Ninja school make this the best martial arts school for children in London. I speak with no hesitation - the love, dedication, creativity and sportsmanship of the instructors really come through."</p>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="testimonial-navigation">
+                <button id="prevTestimonial" class="btn btn-primary"><</button>
+                <button id="nextTestimonial" class="btn btn-primary">></button>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <footer id="contact" class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Ninja School</h3>
+                    <p>Thomas Tallis Secondary School, Kidbrooke Park Road Blackheath London SE3 9PX</p>
+                    <p>Email: enquiries@ninjaschool.org.uk</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Follow Us</h3>
+                    <a href="https://www.facebook.com/NinjaLLP/" target="_blank" class="btn btn-outline-light mr-2">Facebook</a>
+                    <a href="https://www.instagram.com/ninja_school/?hl=en" target="_blank" class="btn btn-outline-light">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $('.carousel').carousel({
+            interval: 2000, // Time between slide transitions
+            ride: 'carousel' // Automatically start the carousel
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const testimonials = document.querySelectorAll('.testimonial-item');
+            let currentIndex = 0;
+    
+            const updateTestimonials = () => {
+                testimonials.forEach((item, index) => {
+                    item.classList.toggle('active', index === currentIndex);
+                });
+            };
+    
+            document.getElementById('prevTestimonial').addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                updateTestimonials();
+            });
+    
+            document.getElementById('nextTestimonial').addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % testimonials.length;
+                updateTestimonials();
+            });
+    
+            updateTestimonials();
+        });
+        
+    </script>
+</body>
+</html>
