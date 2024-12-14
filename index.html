@@ -6,17 +6,42 @@
     <title>Ninja School - Martial Arts for Children</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
     <style>
+
+        :root {
+            --primary-color: #4a4a4a;
+            --secondary-color: #f9f9f9;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }               
+
+
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            padding: 0px;
             text-align: center;
         }
+
 
         .hero_area {
             position: relative;
             height: 80vh;
             color: #ffffff00;
             overflow: hidden;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgb(255 255 255);
         }
 
         .text {
@@ -106,19 +131,25 @@
             display: block;
         }
 
+
         .program-section {
-            position: relative;
-            background-color: #b8b9b9;
-            color: #fff; /* Adjust text color for visibility */
-            padding: 50px 0; /* Adjust as needed */
+            padding: 60px 0;
+            background-color: #d1d1d1;
         }
+        
+        
         
         
         .program-section .container {
             position: relative;
-            z-index: 2; /* Ensures the content is above the background image */
+            z-index: 2;
         }
         
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
         .section-title1{
             color: #0b4b8b;
@@ -130,8 +161,32 @@
             color: #f8f9fa;
 
         }
+        .schedule-section {
+            position: relative;
+            background-image: url('/assets/bg-img/bg5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #ffffff71;
+            padding: 50px 0;
+            z-index: 1;
+            filter: grayscale(90%);
+        }   
+        
+        .schedule-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.315);
+            z-index: -1;
 
-        .about-section, .schedule-section {
+        }
+        
+
+        .about-section{
             background-color: #f8f9fa;
         }
         #coaches {
@@ -155,30 +210,75 @@
         
         .coach-card {
             background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
             text-align: center;
-            flex: 1;
-            min-height: 220px; /* Ensures all cards are the same height */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s ease;
+        }
+
+        .coach-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .coach-image-wrapper {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            padding: 10px;
+            position: relative;
+        }
+        
+        .coach-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .coach-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, #f3ec78, #af4261);
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+        
+        .coach-image-wrapper.blue::before {
+            background: linear-gradient(45deg, #4e54c8, #8f94fb);
+        }
+        
+        .coach-image-wrapper.green::before {
+            background: linear-gradient(45deg, #11998e, #38ef7d);
+        }
+        
+        .coach-image-wrapper.red::before {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+        }
+        
+        .coach-image-wrapper.yellow::before {
+            background: linear-gradient(45deg, #f7971e, #ffd200);
         }
         
         .coach-card h3 {
             font-size: 1.5em;
-            color: #007bff;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            color: #333;
         }
-        
         .coach-card p {
             font-size: 1em;
-            color: #555;
+            color: #666;
         }
-        
         .coach-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
@@ -209,26 +309,340 @@
         }
 
         .container h1 {
-            padding-top: 10%;
+            padding-top: 20%;
+        }
+        .container h2 {
+            padding-top: 0%;
         }
 
         .next, .prev {
             color: #343a40;
         }
-        @media (max-width: 768px) {
-            .hero_area {
-                height: 70vh;
-            }
-            .hero-carousel .carousel-item {
-                height: 70vh;
-            }
-        }
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+
+.coach-section {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.coaches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Schedule grid */
+.schedule-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+}
+
+.schedule-card {
+    background: #ffffffcb;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.day-header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 16px 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.schedule-content {
+    padding: 20px;
+}
+
+
+/* Time blocks */
+.time-block {
+    margin-bottom: 24px;
+}
+
+.time-block:last-child {
+    margin-bottom: 0;
+}
+
+.time {
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.classes {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.class {
+    color: #666;
+    font-size: 14px;
+}
+@media (min-width: 768px) {
+    .schedule-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .location-icon {
+        color: white;
+        font-size: 25px;
+        margin-left: 10px;
+        vertical-align: middle; 
+        text-decoration: none; 
+    }
+    
+    .location-icon:hover {
+        color: #ddd; 
+    }
+    .location-icon {
+        color: white;
+        font-size: 25px;
+        margin-left: 10px;
+        vertical-align: middle; 
+        text-decoration: none; 
+    }
+    
+    .location-icon:hover {
+        color: #ddd; 
+    }
+    
+    
+}
+
+@media (min-width: 1024px) {
+    .schedule-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+    /* Mobile optimizations */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+
+    .schedule-grid {
+        gap: 16px;
+    }
+
+    .day-header {
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+
+    .schedule-content {
+        padding: 16px;
+    }
+
+    .time-block {
+        margin-bottom: 20px;
+    }
+
+    .coaches-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+    
+    .coach-card {
+        max-width: 220px;
+        min-height: 320px;
+    }
+    .coach-card .bio {
+        position: relative;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    .coach-card .more-text {
+        display: none;
+    }
+    
+    .read-more {
+        color: #007bff;
+        cursor: pointer;
+        font-size: 14px;
+        text-decoration: underline;
+    }
+    
+    .read-more:hover {
+        color: #0056b3;
+    }
+    .coach-image-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 0;
+    }
+    .program-card {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .program-container {
+        padding: 0 15px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+
+    .card-price {
+        font-size: 18px;
+    }
+    .location-icon {
+        color: white;
+        font-size: 25px;
+        margin-left: 10px;
+        vertical-align: middle; 
+        text-decoration: none; 
+    }
+    
+    .location-icon:hover {
+        color: #ddd; 
+    }
+    .fa-solid, .fas {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        text-align: end;
+        margin-left: 100px;
+    }
+    
+}
+
+
+.program-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+}
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.card-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+.card-details {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.card-details li {
+    margin-bottom: 8px;
+    color: #666;
+    position: relative;
+}
+
+.card-details li::before {
+    content: "•";
+    color: #e74c3c;
+    position: absolute;
+    left: -20px;
+}
+
+.program-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    padding: 40px 0;
+}
+
+.location-icon {
+    color: white;
+    font-size: 25px;
+    margin-left: 10px;
+    vertical-align: middle; 
+    text-decoration: none; 
+}
+
+.location-icon:hover {
+    color: #ddd; 
+}
+
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">Ninja School</a>
+            <a class="navbar-brand" href="index.html">
+                <strong>Ninja</strong> School
+            </a>
+            <a href="https://www.google.com/maps/place/Thomas+Tallis+School/@51.4659617,0.0233595,17z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9144e517ce3:0x2043bd5074da549d!8m2!3d51.4659617!4d0.0259344!16zL20vMDh6OTJz?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" class="location-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -244,6 +658,9 @@
             </div>
         </nav>
     </header>
+    
+    
+    
 
     <section id="home" class="hero_area">
         <div id="heroCarousel" class="carousel slide hero-carousel" data-ride="carousel">
@@ -268,7 +685,7 @@
         <div class="container hero-content">
             <h1 class="text display-4">Welcome to Ninja School</h1>
             <p class="text1 lead">Developmental Mixed Martial Arts & Coordination School for young children</p>
-            <a href="#contact" class="btn btn-custom btn-lg mt-3">Contact Us</a>
+            <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMSckKnqFsftzpjkVTdVqpHRpjcNtBrZHRzfXbNRxFHsTWDcQBdBmHrwNbdrkKbWtxGkgjw" class="btn btn-custom btn-lg mt-3">Contact Us</a>
         </div>
     </section>
 
@@ -276,7 +693,7 @@
         <div class="container">
             <h2 class="section-title">About Us</h2>
             <p>Ninja School is a developmental Mixed Martial Arts & Coordination School for young children, co-created by the founding members and nurtured by the Students and Parents involved. Our aim is to create a unique environment where kids not only strive to improve themselves, but also to help those around them improve.</p>
-            <p>We are located in an Olympic Legacy Dojo, 380sqm at Thomas Tallis Secondary School. It's the largest open dojo in Europe, first designed for the Japanese olympic judo team in 2012. Ninja School proudly runs 14 classes a week here.</p>
+            
         </div>
     </section>
 
@@ -294,121 +711,226 @@
     </div>
 </section>
 
+<section id="program" class="program-section">
+    <div class="program-container">
+        <h2 class="section-title">Ninja School Programs</h2>
+        <div class="card-container">
+            <div class="program-card">
+                <img src="/assets/bg-img/bg2.jpg" alt="Ninja School" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">Ninja School</h2>
+                    <p class="card-price">£160 per term</p>
+                    <ul class="card-details">
+                        <li>One class per week</li>
+                        <li>10% sibling discount</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="program-card">
+                <img src="/assets/bg-img/bg1.jpg" alt="Ninja Cubs" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">Ninja Cubs</h2>
+                    <p class="card-price">£145 per term</p>
+                    <ul class="card-details">
+                        <li>One class per week</li>
+                        <li>10% sibling discount</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="program-card">
+                <img src="/assets/bg-img/bg4.jpg" alt="Kaizen" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">Kaizen</h2>
+                    <p class="card-price">£220 per term</p>
+                    <ul class="card-details">
+                        <li>Unlimited classes per week</li>
+                        <li>10% sibling discount</li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+</section>
+
+
     
-    
-    <section id="program" class="program-section">
-        <div class="container">
-            <h2 class="section-title1 text-center mb-4">Our Programs</h2>
-            <div class="row">
-                <!-- Ninja School Card -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body1">
-                            <h3 class="card-title">Ninja School</h3>
-                            <p class="card-text">&pound;160 per term, one class per week. 10% sibling discount.</p>
+<section class="schedule-section">
+    <div class="container">
+        <h2 class="section-title">Time Table</h2>
+        <div class="schedule-grid">
+            <!-- Monday -->
+            <div class="schedule-card">
+                <div class="day-header">Monday</div>
+                <div class="schedule-content">
+                    <div class="time-block">
+                        <div class="time">16:15 - 17:30</div>
+                        <div class="classes">
+                            <div class="class">Ninja School S.Yrs 1&2</div>
+                            <div class="class">Ninja School S.Yrs 3&4</div>
+                        </div>
+                    </div>
+                    <div class="time-block">
+                        <div class="time">17:45 - 19:00</div>
+                        <div class="classes">
+                            <div class="class">Ninja School S.Yrs 5&6</div>
+                            <div class="class">Kaizen Martial Arts BJJ</div>
                         </div>
                     </div>
                 </div>
-    
-                <!-- Ninja Cubs Card -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body1">
-                            <h3 class="card-title">Ninja Cubs</h3>
-                            <p class="card-text">&pound;145 per term, one class per week. 10% sibling discount.</p>
+            </div>
+
+            <!-- Tuesday -->
+            <div class="schedule-card">
+                <div class="day-header">Tuesday</div>
+                <div class="schedule-content">
+                    <div class="time-block">
+                        <div class="time">16:15 - 17:30</div>
+                        <div class="classes">
+                            <div class="class">Ninja School S.Yrs 1&2</div>
+                            <div class="class">Ninja School S.Yrs 3&4</div>
                         </div>
                     </div>
                 </div>
-    
-                <!-- Kaizen Card -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body1">
-                            <h3 class="card-title">Kaizen</h3>
-                            <p class="card-text">&pound;220 per term, unlimited classes per week. 10% sibling discount.</p>
+            </div>
+
+            <!-- Wednesday -->
+            <div class="schedule-card">
+                <div class="day-header">Wednesday</div>
+                <div class="schedule-content">
+                    <div class="time-block">
+                        <div class="time">16:15 - 17:30</div>
+                        <div class="classes">
+                            <div class="class">Ninja School S.Yrs 5&6</div>
+                            <div class="class">Ninja School Plus</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Friday -->
+            <div class="schedule-card">
+                <div class="day-header">Friday</div>
+                <div class="schedule-content">
+                    <div class="time-block">
+                        <div class="time">16:15 - 17:30</div>
+                        <div class="classes">
+                            <div class="class">Ninja School S.Yrs 3&4</div>
+                            <div class="class">Kaizen Martial Arts Thaijutsu</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saturday -->
+            <div class="schedule-card">
+                <div class="day-header">Saturday</div>
+                <div class="schedule-content">
+                    <div class="time-block">
+                        <div class="time">9:30 - 10:45</div>
+                        <div class="classes">
+                            <div class="class">Ninja School S.Yrs 1&2</div>
+                            <div class="class">Ninja School S.Yrs 3&4</div>
+                        </div>
+                    </div>
+                    <div class="time-block">
+                        <div class="time">11:00 - 12:15</div>
+                        <div class="classes">
+                            <div class="class">Kaizen Martial Arts BJJ</div>
+                            <div class="class">Ninja School S.Yrs 5&6</div>
+                        </div>
+                    </div>
+                    <div class="time-block">
+                        <div class="time">12:30 - 13:45</div>
+                        <div class="classes">
+                            <div class="class">Ninja School S.Yrs 1&2</div>
+                            <div class="class">Ninja School S.Yrs 3&4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sunday -->
+            <div class="schedule-card">
+                <div class="day-header">Sunday</div>
+                <div class="schedule-content">
+                    <div class="time-block">
+                        <div class="time">12:30 - 13:45</div>
+                        <div class="classes">
+                            <div class="class">Ninja School S.Yrs 1&2</div>
+                            <div class="class">Ninja School S.Yrs 3&4</div>
+                        </div>
+                    </div>
+                    <div class="time-block">
+                        <div class="time">14:00 - 15:15</div>
+                        <div class="classes">
+                            <div class="class">Ninja School & Kaizen Competition Class</div>
+                        </div>
+                    </div>
+                    <div class="time-block">
+                        <div class="time">15:30 - 16:45</div>
+                        <div class="classes">
+                            <div class="class">Ninja School S.Yrs 1&2</div>
+                            <div class="class">Ninja Adults</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+    
     
 
-    <section id="schedule" class="schedule-section">
-        <div class="container">
-            <h2 class="section-title">Time Table:</h2>
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Day</th>
-                            <th>Time</th>
-                            <th>Class</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Monday</td>
-                            <td>16:15 - 17:30</td>
-                            <td>Ninja School S.Yrs 1&2, 3&4</td>
-                        </tr>
-                        <tr>
-                            <td>Monday</td>
-                            <td>17:45 - 19:00</td>
-                            <td>Ninja School S.Yrs 5&6, Kaizen Martial Arts BJJ</td>
-                        </tr>
-                        <tr>
-                            <td>Tuesday</td>
-                            <td>16:15 - 17:30</td>
-                            <td>Ninja School S.Yrs 1&2, 3&4</td>
-                        </tr>
-                        <tr>
-                            <td>Wednesday</td>
-                            <td>16:15 - 17:30</td>
-                            <td>Ninja School S.Yrs 5&6, Ninja School Plus</td>
-                        </tr>
-                        <tr>
-                            <td>Friday</td>
-                            <td>16:15 - 17:30</td>
-                            <td>Ninja School S.Yrs 3&4, Kaizen Martial Arts Thaijutsu</td>
-                        </tr>
-                    </tbody>
-                </table>
+<section id="coaches" class="coach-section">
+    <div class="container">
+        <h2 class="section-title">Meet Our Coaches</h2>
+        <div class="coaches-grid">
+            <div class="coach-card">
+                <div class="coach-image-wrapper blue">
+                    <img src="/assets/bg-img/logo.jpg" alt="Harry Bovill" class="coach-image">
+                </div>
+                <h3>Harry Bovill</h3>
+                <p class="bio" id="bio-1">I am the founder of Ninja School and a Social Entrepreneur. 
+                    <span class="more-text" style="display:none;">Three years prior to actualising Ninja School, I gained experience working on several international social projects with entrepreneurs at the Hub Westminster, Permaculture and the EU-supported group Edgeryders. These projects centred around education & innovation, both which I had a huge passion for.</span>
+                </p>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleBio(this, 'bio-1')">Read More</a>
             </div>
-        </div>
-    </section>
 
-    <section id="coaches" class="coach-section">
-        <div class="container">
-            <h2 class="section-title">Meet Our Coaches</h2>
-            <div class="row">
-                <div class="col-md-6 col-lg-3">
-                    <div class="coach-card">
-                        <h3>Harry Bovill</h3>
-                        <p>Founder of Ninja School and a Social Entrepreneur</p>
-                    </div>
+            <div class="coach-card">
+                <div class="coach-image-wrapper green">
+                    <img src="/assets/bg-img/logo.jpg" alt="Jonathan Hatzimasouras" class="coach-image">
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="coach-card">
-                        <h3>Jonathan Hatzimasouras</h3>
-                        <p>Experienced martial arts instructor</p>
-                    </div>
+                <h3>Jonathan Hatzimasouras</h3>
+                <p class="bio" id="bio-2">Experienced martial arts instructor
+                    <span class="more-text" style="display:none;">With over 15 years of experience, Jonathan has trained students at all levels of martial arts.</span>
+                </p>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleBio(this, 'bio-2')">Read More</a>
+            </div>
+
+            <div class="coach-card">
+                <div class="coach-image-wrapper red">
+                    <img src="/assets/bg-img/logo.jpg" alt="Reece Fletcher" class="coach-image">
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="coach-card">
-                        <h3>Reece Fletcher</h3>
-                        <p>Skilled martial arts coach</p>
-                    </div>
+                <h3>Reece Fletcher</h3>
+                <p class="bio" id="bio-3">Skilled martial arts coach
+                    <span class="more-text" style="display:none;">Reece specializes in teaching advanced techniques and working with competitive athletes to improve their performance.</span>
+                </p>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleBio(this, 'bio-3')">Read More</a>
+            </div>
+
+            <div class="coach-card">
+                <div class="coach-image-wrapper yellow">
+                    <img src="/assets/bg-img/logo.jpg" alt="Mouncif Alif" class="coach-image">
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="coach-card">
-                        <h3>Mouncif Alif</h3>
-                        <p>Dedicated martial arts trainer</p>
-                    </div>
-                </div>
+                <h3>Mouncif Alif</h3>
+                <p class="bio" id="bio-4">Dedicated martial arts trainer
+                    <span class="more-text" style="display:none;">Mouncif brings years of experience in various disciplines, ensuring a comprehensive training approach for all levels of students.</span>
+                </p>
+                <a href="javascript:void(0);" class="read-more" onclick="toggleBio(this, 'bio-4')">Read More</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
     
 
     <section id="testimonials" class="testimonial-section">
@@ -461,8 +983,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
         $('.carousel').carousel({
-            interval: 2000, // Time between slide transitions
-            ride: 'carousel' // Automatically start the carousel
+            interval: 2000,
+            ride: 'carousel'
         });
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -489,5 +1011,31 @@
         });
         
     </script>
+    <script>
+        
+        window.onload = function() {
+            var bioSections = document.querySelectorAll('.bio .more-text');
+            bioSections.forEach(function(bio) {
+                bio.style.display = 'none';
+            });
+        };
+    
+        
+        function toggleBio(element, bioId) {
+            var bio = document.getElementById(bioId);
+            var moreText = bio.querySelector('.more-text');
+            var readMoreLink = element;
+    
+            if (moreText.style.display === "none") {
+                moreText.style.display = "inline";
+                readMoreLink.innerHTML = "Read Less";
+            } else {
+                moreText.style.display = "none";
+                readMoreLink.innerHTML = "Read More";
+            }
+        }
+    </script>
+    
+    
 </body>
 </html>
