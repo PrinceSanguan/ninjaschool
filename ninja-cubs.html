@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Cubs Program - Ninja School</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a4a4a;
+            --secondary-color: #f9f9f9;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            padding-top: 56px;
+        }
+        .container {
+            background-color: #000; /* Ensure container background is black */
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #ffffff;
+        }
+
+        .location-icon {
+            color: white;
+            font-size: 25px;
+            margin-left: 10px;
+            vertical-align: middle;
+            text-decoration: none;
+        }
+
+        .location-icon:hover {
+            color: #ddd;
+        }
+
+        .kaizen-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 2rem auto;
+            box-shadow: var(--card-shadow);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        
+        .program-image {
+            flex: 1;
+            background-image: url('/assets/bg-img/bg1.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+        }
+        .kaizen-content {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 2rem;
+        }
+
+        .kaizen-title {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .kaizen-description {
+            margin-bottom: 1.5rem;
+        }
+
+        .kaizen-features {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .kaizen-features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .kaizen-features li::before {
+            content: "\2022";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .footer_section {
+            background-color: #000;
+            color: #fff;
+            padding: 40px 0;
+            padding-bottom: 1%;
+            text-align: center;
+        }
+        
+        .footer_section h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .footer_section p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .footer_section a {
+            color: #8ad4ff;
+            text-decoration: none;
+        }
+        
+        .footer_section a:hover {
+            color: #92caf0;
+        }
+        
+        .social-links {
+            display: inline-block;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #343a40;
+            border: 2px solid aliceblue;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #92caf0;
+            color: #000;
+            border-color: #92caf0;
+        }
+        
+        .copyright p {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .choros-link {
+            color: #8ad4ff;
+            font-weight: bold;
+        }
+        
+        .choros-link:hover {
+            color: #92caf0;
+        }
+        
+        @media (max-width: 768px) {
+            .kaizen-container {
+                flex-direction: column;
+            }
+            
+            .kaizen-image {
+                min-height: 200px;
+            }
+            
+            .footer_section {
+                padding: 30px 15px;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .container {
+                background-color: #000;
+                padding-bottom: 1%;
+            }
+
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="index.html">
+                <strong>Ninja</strong> School
+            </a>
+            <a href="https://www.google.com/maps/place/Thomas+Tallis+School/@51.4659617,0.0233595,17z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9144e517ce3:0x2043bd5074da549d!8m2!3d51.4659617!4d0.0259344!16zL20vMDh6OTJz?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" class="location-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#program">Program</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#class">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#coaches">Coaches</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#testimonials">Testimonials</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="kaizen-container">
+            <div class="program-image"></div>
+            <div class="kaizen-content">
+                <h1 class="kaizen-title">Ninja Cubs Program</h1>
+                <p class="kaizen-description">
+                    The Ninja Cubs Program at Ninja School is designed for our youngest martial arts enthusiasts. It focuses on developing basic motor skills, discipline, and teamwork in a fun and engaging environment.
+                </p>
+                <p class="kaizen-description">
+                    Our Ninja Cubs Program offers:
+                </p>
+                <ul class="kaizen-features">
+                    <li>One class per week</li>
+                    <li>10% sibling discount available</li>
+                </ul>
+                <p class="kaizen-description">
+                    Price: £145 per term
+                </p>
+                <a href="#" class="btn btn-primary">Enroll Now</a>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact" class="footer_section">
+        <div class="container text-center">
+            <h3>Ninja School</h3>
+            <p>Thomas Tallis Secondary School, Kidbrooke Park Road Blackheath</p>
+            <p>London SE3 9PX</p>
+            <p>Email: <a href="mailto:enquiries@ninjaschool.org.uk">enquiries@ninjaschool.org.uk</a></p>
+            
+            <div class="follow-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/NinjaLLP/" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com/ninja_school/?hl=en" target="_blank">Instagram</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 All Rights Reserved By
+                    <a href="https://choros.io/" class="choros-link">Choros.io</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
