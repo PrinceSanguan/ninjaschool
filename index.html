@@ -40,6 +40,17 @@
             overflow: hidden;
         }
 
+        .hero_area::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.534);
+            z-index: 1;
+        }
+
         .navbar-dark .navbar-nav .nav-link {
             color: rgb(255 255 255);
         }
@@ -436,7 +447,6 @@
         vertical-align: middle; 
         text-decoration: none; 
     }
-    
     .location-icon:hover {
         color: #ddd; 
     }
@@ -466,6 +476,31 @@
     .container {
         padding: 0 16px;
     }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        margin-top: 10%;
+
+    }
+    .location-icon {
+        color: white;
+        font-size: 25px;
+        position: absolute; /* Position the icon absolutely */
+        top: 10px; /* Adjust vertical positioning */
+        left: 40px; /* Adjust horizontal positioning */
+        vertical-align: middle;
+        text-decoration: none;
+        display: flex;
+        align-items: center; /* Align items vertically */
+        justify-content: center; /* Optional for centering the icon inside */
+    }
+    
+    .parent-container { /* Ensure parent is relatively positioned */
+        position: relative;
+    }
+    
+
 
     .section-title {
         font-size: 28px;
@@ -807,9 +842,32 @@
     text-decoration: none;
     border: 2px solid #4086b4;
 }
+.hero_area {
+    position: relative;
+    height: 70vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero_area::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.623);
+    z-index: 1;
+}
 
 
-
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
 
     </style>
 </head>
