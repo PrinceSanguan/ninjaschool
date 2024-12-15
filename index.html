@@ -486,17 +486,17 @@
     .location-icon {
         color: white;
         font-size: 25px;
-        position: absolute; /* Position the icon absolutely */
-        top: 10px; /* Adjust vertical positioning */
-        left: 40px; /* Adjust horizontal positioning */
+        position: absolute; 
+        top: 10px;
+        left: 40px;
         vertical-align: middle;
         text-decoration: none;
         display: flex;
-        align-items: center; /* Align items vertically */
-        justify-content: center; /* Optional for centering the icon inside */
+        align-items: center;
+        justify-content: center;
     }
     
-    .parent-container { /* Ensure parent is relatively positioned */
+    .parent-container {
         position: relative;
     }
     
@@ -823,6 +823,27 @@
     .play-button svg {
         width: 25px;
         height: 25px;
+    }
+}
+
+@media (max-width: 390px) {
+    .play-button {
+        width: 50px;
+        height: 50px;
+    }
+    .play-button svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .coaches-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+    
+    .coach-card {
+        max-width: 220px;
+        min-height: 320px;
     }
 }
 .program-card {
