@@ -18,7 +18,7 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: var(--secondary-color);
+            background-color: #818182;
             color: var(--text-color);
             padding-top: 56px;
         }
@@ -31,13 +31,23 @@
             color: #ffffff;
         }
 
+        .navbar-nav {
+            align-items: center;
+        }
+
         .location-icon {
             color: white;
             font-size: 25px;
-            margin-left: 10px;
-            vertical-align: middle;
             text-decoration: none;
+            position: fixed;
+            top: 10px;
+            left: 150px;
+            z-index: 1000;
+            display: flex
+        ;
+            align-items: center;
         }
+        
 
         .location-icon:hover {
             color: #ddd;
@@ -113,7 +123,7 @@
         }
         
         .footer_section a {
-            color: #8ad4ff;
+            color: #002bd6;
             text-decoration: none;
         }
         
@@ -122,7 +132,7 @@
         }
         
         .social-links {
-            display: inline-block;
+            display: flex;
             justify-content: center;
             gap: 15px;
             margin-top: 15px;
@@ -154,12 +164,25 @@
         }
         
         .choros-link {
-            color: #8ad4ff;
+            color: #002bd6;
             font-weight: bold;
         }
         
         .choros-link:hover {
             color: #92caf0;
+        }
+
+        .dropdown-menu {
+            background-color: #343a40;
+        }
+        .dropdown-item {
+            color: #ffff;
+            text-align: center;
+        }
+        .dropdown-item:hover{
+            color: #ffff;
+            text-align: center;
+            background-color: #007bff;
         }
         
         @media (max-width: 768px) {
@@ -185,6 +208,24 @@
                 padding-bottom: 1%;
             }
 
+            .social-links {
+                display: inline-block;
+                justify-content: center;
+                gap: 15px;
+                margin-top: 15px;
+                flex-wrap: wrap;
+            }
+
+        }
+        .btn-primary {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+            width: 35%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -202,9 +243,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#program">Program</a></li>
+                    
+                    <!-- Program Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Program
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="ninja-cubs.html">Ninja Cubs</a>
+                            <a class="dropdown-item" href="ninja-school.html">Ninja School</a>
+                            <a class="dropdown-item" href="kaizen.html">Kaizen</a>
+                        </div>
+                    </li>
+        
                     <li class="nav-item"><a class="nav-link" href="index.html#class">Schedule</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#coaches">Coaches</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#testimonials">Testimonials</a></li>
@@ -258,5 +311,9 @@
             </div>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
